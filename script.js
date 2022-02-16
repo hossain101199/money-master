@@ -9,32 +9,42 @@ let totalExpensesOutput = document.getElementById("TotalExpensesID");
 let BalanceOutput = document.getElementById("BalanceExistID");
 let SavingOutput = document.getElementById("SavingAmountID");
 let RemainingOutput = document.getElementById("RemainingID");
-
-function clculator() {
-    totalExpensesOutput.innerText = Number(FoodExpenses.value) + Number(RentExpenses.value) + Number(ClothesExpenses.value) + Number(totalExpensesOutput.innerText);
-    BalanceOutput.innerText = Number(IncomeIncome.value) - Number(totalExpensesOutput.innerText);
-    IncomeIncome.value = "";
-    FoodExpenses.value = "";
-    RentExpenses.value = "";
-    ClothesExpenses.value = "";
-
+// addition function
+function addition(food, rent, clothes) {
+    return Number(food) + Number(rent) + Number(clothes);
+};
+// subtraction function
+function subtraction(IncomeANDBalance, ExpensesANDSaving) {
+    return Number(IncomeANDBalance) - Number(ExpensesANDSaving);
+};
+// percentage function
+function percentage(incomeValue, savingValue) {
+    return Number(incomeValue) * (Number(savingValue) / 100);
 }
-
-function Savingclculator() {
-    // 1st
-    totalExpensesOutput.innerText = Number(FoodExpenses.value) + Number(RentExpenses.value) + Number(ClothesExpenses.value) + Number(totalExpensesOutput.innerText);
-    BalanceOutput.innerText = Number(IncomeIncome.value) - Number(totalExpensesOutput.innerText);
-    // 2nd
-    SavingOutput.innerText = Number(IncomeIncome.value) * (Number(SavePercentage.value) / 100)
-    RemainingOutput.innerText = Number(BalanceOutput.innerText) - Number(SavingOutput.innerText);
-    // 1st
+// income and expenses clculator
+function clculator() {
+    totalExpensesOutput.innerText = addition(FoodExpenses.value, RentExpenses.value, ClothesExpenses.value);
+    BalanceOutput.innerText = subtraction(IncomeIncome.value, totalExpensesOutput.innerText);
+    // income and expenses after clculat 
     IncomeIncome.value = "";
     FoodExpenses.value = "";
     RentExpenses.value = "";
     ClothesExpenses.value = "";
-
-    // 2nd
+};
+// income and expenses also saving clculator
+function Savingclculator() {
+    // income and expenses clculat
+    totalExpensesOutput.innerText = addition(FoodExpenses.value, RentExpenses.value, ClothesExpenses.value);
+    BalanceOutput.innerText = subtraction(IncomeIncome.value, totalExpensesOutput.innerText);
+    // saving clculat
+    SavingOutput.innerText = percentage(IncomeIncome.value, SavePercentage.value);
+    RemainingOutput.innerText = subtraction(BalanceOutput.innerText, SavingOutput.innerText);
+    // income and expenses after clculat 
+    IncomeIncome.value = "";
+    FoodExpenses.value = "";
+    RentExpenses.value = "";
+    ClothesExpenses.value = "";
+    // saving after clculat 
     IncomeIncome.value = "";
     SavePercentage.value = "";
-
-}
+};
