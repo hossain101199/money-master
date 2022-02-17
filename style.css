@@ -1,0 +1,24 @@
+/* spended more error */
+#spendedmore{
+    color: red;
+    display: none;
+    font-size: 20px;
+}
+/* not enough error */
+#notenough{
+    color: red;
+    display: none;
+    font-size: 20px;
+}
+/* no money error */
+#nomoney{
+    color: red;
+    display: none;
+    font-size: 20px;
+}
+/* input incorrect error */
+#inputincorrect{
+    color: red;
+    display: none;
+    font-size: 20px;
+}
