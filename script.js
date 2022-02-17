@@ -57,11 +57,6 @@ function clculator() {
         let spended = document.getElementById("spendedmore");
         spended.style.display = "block"
     }
-    // income and expenses after clculat 
-    IncomeIncome.value = "";
-    FoodExpenses.value = "";
-    RentExpenses.value = "";
-    ClothesExpenses.value = "";
 };
 // income and expenses also saving clculator
 function Savingclculator() {
@@ -92,12 +87,4 @@ function Savingclculator() {
         let moneyLeft = document.getElementById("nomoney");
         moneyLeft.style.display = "block"
     };
-    // income and expenses after clculat 
-    IncomeIncome.value = "";
-    FoodExpenses.value = "";
-    RentExpenses.value = "";
-    ClothesExpenses.value = "";
-    // saving after clculat 
-    IncomeIncome.value = "";
-    SavePercentage.value = "";
 };
